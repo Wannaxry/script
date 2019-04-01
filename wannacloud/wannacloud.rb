@@ -8,7 +8,7 @@ if all != "a"
 end
 
 ok = []
-ok << system("apt-get update -y > /dev/null")
+ok << system("apt-get update > /dev/null")
 ok << system("apt-get upgrade -y > /dev/null")
 
 puts "[INFO] update checking..."
@@ -22,7 +22,8 @@ puts "[INFO] update ok"
 
 ok = []
 ok << system("apt-get install mysql-server -y > /dev/null")
-ok << system("mysql --user=root --password=atistirma22 < database.sql > /dev/null ")
+ok << system("mysql < database.sql > /dev/null ")
+ok << system("service mysql restart > /dev/null ")
 
 puts "[INFO] mysql checking..."
 ok.each_with_index do |state, index|
@@ -82,9 +83,10 @@ puts "[INFO] rmapache ok"
 
 ok = []
 ok << system("chown -R www-data:www-data /usr/share/nextcloud> /dev/null")
-
+ok << system("mkdir /usr/share/nextcloud/data")
+ok << system("chown 755 /usr/share/nextcloud/data")
+ok << system("chown -R www-data:www-data /usr/share/nextcloud/data> /dev/null")
 ok << system("rm /etc/nginx/sites-available/default > /dev/null") 
-
 ok << system("rm /etc/nginx/sites-enabled/default > /dev/null")
 
 puts "[INFO] nginx2 checking..."
@@ -99,27 +101,12 @@ puts "[INFO] nginx2 ok"
 ok = []
 ok << system("mv nextcloud.conf /etc/nginx/sites-available/ > /dev/null")
 ok << system("ln -s /etc/nginx/sites-available/nextcloud.conf /etc/nginx/sites-enabled/ > /dev/null") 
-
-puts "[INFO] conf checking..."
+ok << system("systemctl reload nginx > /dev/null") 
+puts "[INFO] servicio nginx checking..."
 ok.each_with_index do |state, index|
   if not state
-    puts "[ERROR] conf step #{index}!!!"
+    puts "[ERROR] servicio nginx step #{index}!!!"
     exit 
   end
 end
-puts "[INFO] conf ok"
-
-ok = []
-ok << system("apt-get install -y nginx > /dev/null")
-
-servicio= system("")
-
-puts "[INFO] servicio checking..."
-ok.each_with_index do |state, index|
-  if not state
-    puts "[ERROR] servicio step #{index}!!!"
-    exit 
-  end
-end
-puts "[INFO] servicio ok"
-
+puts "[INFO] servicio nginx ok"
