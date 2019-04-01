@@ -11,6 +11,19 @@ ok = []
 ok << system("apt-get update -y > /dev/null")
 ok << system("apt-get upgrade -y > /dev/null")
 
+puts "[INFO] update checking..."
+ok.each_with_index do |state, index|
+  if not state
+    puts "[ERROR] update step #{index}!!!"
+    exit 
+  end
+end
+puts "[INFO] update ok"
+
+ok = []
+ok << system("apt-get install mysql-server -y > /dev/null")
+ok << system("mysql --user=root --password=atistirma22 < database.sql > /dev/null ")
+
 puts "[INFO] mysql checking..."
 ok.each_with_index do |state, index|
   if not state
