@@ -1,6 +1,6 @@
-chown -R www-data:www-data /usr/share/nextcloud 
-chown -R www-data:www-data /usr/share/nextcloud/data
-find /usr/share/nextcloud/ -type d -exec chmod 750 {} \; 
-find /usr/share/nextcloud/ -type f -exec chmod 640 {} \; 
-find /usr/share/nextcloud/data -type d -exec chmod 750 {} \; 
-find /usr/share/nextcloud/data -type f -exec chmod 640 {} \;
+chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /var/www/html/data
+find /var/www/html -type d -exec chmod 750 {} \; 
+find /var/www/html -type f -exec chmod 640 {} \; 
+find /var/www/html/data -type d -exec chmod 750 {} \; 
+find /var/www/html/data -type f -exec chmod 640 {} \;
