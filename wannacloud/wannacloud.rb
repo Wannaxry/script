@@ -71,10 +71,10 @@ puts "[INFO] php ok"
 puts "[INFO] servicio Nextcloud checking..."
 
 ok = []
-ok << system("wget -q https://download.nextcloud.com/server/releases/latest.zip")
-ok << system("unzip latest.zip > /dev/null ")
-ok << system("mv nextcloud/* /var/www/ > /dev/null ")
-ok << system("rm latest.zip > /dev/null ")
+ok << system("wget -q https://download.nextcloud.com/server/releases/latest-13.zip")
+ok << system("unzip latest-13.zip > /dev/null ")
+ok << system("mv nextcloud/* /var/www/html/ > /dev/null ")
+ok << system("rm latest-13.zip > /dev/null ")
 ok << system("mkdir /var/www/html/data")
 ok << system("sh permisos.sh")
 ok << system("systemctl reload nginx > /dev/null") 
