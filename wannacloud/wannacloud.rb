@@ -71,7 +71,7 @@ puts "[INFO] php ok"
 puts "[INFO] servicio Nextcloud checking..."
 
 ok = []
-ok << system("wget -q https://download.nextcloud.com/server/releases/nextcloud-12.0.5.zip")
+ok << system("wget -q https://download.nextcloud.com/server/releases/latest.zip")
 ok << system("unzip nextcloud-12.0.5.zip > /dev/null ")
 ok << system("mv nextcloud /usr/share/ > /dev/null ")
 ok << system("rm nextcloud-12.0.5.zip > /dev/null ")
