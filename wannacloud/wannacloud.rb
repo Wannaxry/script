@@ -58,9 +58,9 @@ puts "[INFO] nginx ok"
 puts "[INFO] php checking..."
 
 ok = []
-ok << system("sudo apt-get install -y php7.0 php7.0-bz2 php7.0-cli php7.0-curl php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-opcache php7.0-sqlite3 php7.0-xml php7.0-zip php-apcu php-pear > /dev/null")
+ok << system("apt-get install -y php7.0 php7.0-bz2 php7.0-cli php7.0-curl php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-opcache php7.0-sqlite3 php7.0-xml php7.0-zip php-apcu php-pear > /dev/null")
 
-ok.each_with_index do |state, index|
+ok.each_with_index do |state, indecdx|
   if not state
     puts "[ERROR] php step #{index}!!!"
     exit 
@@ -74,6 +74,7 @@ ok = []
 ok << system("wget -q https://download.nextcloud.com/server/releases/latest-13.zip")
 ok << system("unzip latest-13.zip > /dev/null ")
 ok << system("mv nextcloud/* /var/www/html/ > /dev/null ")
+ok << system("rm -r nextcloud/ > /dev/null ")
 ok << system("rm latest-13.zip > /dev/null ")
 ok << system("mkdir /var/www/html/data")
 ok << system("sh permisos.sh")
