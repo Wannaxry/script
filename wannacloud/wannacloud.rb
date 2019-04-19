@@ -73,7 +73,7 @@ puts "[INFO] servicio Nextcloud checking..."
 ok = []
 ok << system("wget -q https://download.nextcloud.com/server/releases/latest-13.zip")
 ok << system("unzip latest-13.zip > /dev/null ")
-ok << system("mv nextcloud/* /var/www/html/ > /dev/null ")
+ok << system("mv nextcloud/* /var/www/html > /dev/null ")
 ok << system("rm -r nextcloud/ > /dev/null ")
 ok << system("rm latest-13.zip > /dev/null ")
 ok << system("mkdir /var/www/html/data")
