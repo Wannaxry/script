@@ -1,18 +1,18 @@
-# Automatización de conexión remota mediante Raspberry Pi
+<center><h1 url="www.jmlion.com"> www.jmlion.com </h1></center>
+<center><h1> Automatización de conexión remota mediante Raspberry Pi </h1></center>
 
 <p align="center">  <img src="img/logo-raspberry.png" alt="drawing" width="230" > </p>
 
 ## Índice:
 
-- [Automatización de conexión remota mediante Raspberry Pi](#automatizaci%C3%B3n-de-conexi%C3%B3n-remota-mediante-raspberry-pi)
-  - [Índice:](#%C3%ADndice)
-  - [Instalación del SO](#instalaci%C3%B3n-del-so)
-  - [Creación de script autostart](#creaci%C3%B3n-de-script-autostart)
-  - [Creación de script con inicio sesión](#creaci%C3%B3n-de-script-con-inicio-sesi%C3%B3n)
-      - [Prueba del funcionamiento](#prueba-del-funcionamiento)
-  - [Creación de script con inicio automático](#creaci%C3%B3n-de-script-con-inicio-autom%C3%A1tico)
-      - [Prueba del funcionamiento](#prueba-del-funcionamiento-1)
-  - [Otros parámetros](#otros-par%C3%A1metros)
+- [Índice:](#%C3%ADndice)
+- [Instalación del SO](#instalaci%C3%B3n-del-so)
+- [Creación de script autostart](#creaci%C3%B3n-de-script-autostart)
+- [Creación de script con inicio sesión](#creaci%C3%B3n-de-script-con-inicio-sesi%C3%B3n)
+    - [Prueba del funcionamiento](#prueba-del-funcionamiento)
+- [Creación de script con inicio automático](#creaci%C3%B3n-de-script-con-inicio-autom%C3%A1tico)
+    - [Prueba del funcionamiento](#prueba-del-funcionamiento-1)
+- [Otros parámetros](#otros-par%C3%A1metros)
 
 
 ## Instalación del SO
