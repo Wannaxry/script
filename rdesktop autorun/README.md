@@ -2,9 +2,10 @@
 
 <center><img src="img/logo-raspberry.png"  alt="drawing" width="230"/></center>
 
-##Índice:
+## Índice:
 
 - [Automatización de conexión remota mediante Raspberry Pi](#automatizaci%C3%B3n-de-conexi%C3%B3n-remota-mediante-raspberry-pi)
+  - [Índice:](#%C3%ADndice)
   - [Instalación del SO](#instalaci%C3%B3n-del-so)
   - [Creación de script autostart](#creaci%C3%B3n-de-script-autostart)
   - [Creación de script con inicio sesión](#creaci%C3%B3n-de-script-con-inicio-sesi%C3%B3n)
