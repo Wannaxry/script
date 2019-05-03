@@ -1,0 +1,8 @@
+[Desktop Entry]
+Versión=1.0
+Type=Application
+Name=remoto
+Comment=Conexion remota
+Path=/home/pi/Documents
+TryExec=rdesktop
+Exec=sh /home/pi/Documents/remoto.sh
