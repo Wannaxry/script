@@ -1,7 +1,7 @@
 <h1 align="center" url="www.jmlion.com"> www.jmlion.com </h1>
 <h1 align="center"> Automatizar conexión remota mediante Raspberry Pi </h1>
 
-<p align="center">  <img src="img/logo-raspberry.png" alt="drawing" width="230" > </p>
+<p align="center">  <img align="center" src="img/logo-raspberry.png" alt="drawing" width="230" > </p>
 
 ## Índice:
 

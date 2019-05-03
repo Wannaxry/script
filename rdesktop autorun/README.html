@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Índice:</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 align="center" url="www.jmlion.com"> www.jmlion.com </h1>
+<h1 align="center"> Automatizar conexión remota mediante Raspberry Pi </h1>
+<p align="center">  <img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/logo-raspberry.png" alt="drawing" width="230" > </p>
+<h2 id="%C3%ADndice">Índice:</h2>
+<ul>
+<li><a href="#%C3%ADndice">Índice:</a></li>
+<li><a href="#instalaci%C3%B3n-del-so">Instalación del SO</a></li>
+<li><a href="#creaci%C3%B3n-de-script-autostart">Creación de script autostart</a></li>
+<li><a href="#creaci%C3%B3n-de-script-con-inicio-sesi%C3%B3n">Creación de script con inicio sesión</a>
+<ul>
+<li><a href="#prueba-del-funcionamiento">Prueba del funcionamiento</a></li>
+</ul>
+</li>
+<li><a href="#creaci%C3%B3n-de-script-con-inicio-autom%C3%A1tico">Creación de script con inicio automático</a>
+<ul>
+<li><a href="#prueba-del-funcionamiento-1">Prueba del funcionamiento</a></li>
+</ul>
+</li>
+<li><a href="#otros-par%C3%A1metros">Otros parámetros</a></li>
+</ul>
+<h2 id="instalaci%C3%B3n-del-so">Instalación del SO</h2>
+<p>Empezamos accediendo a la página oficial de <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspberry Pi</a> y procedemos a la descarga de la imagen marcada ya que necesitamos interfaz gráfica y también que pese lo menos posible debido al uso que se le va a aplicar:</p>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/1.png" alt=""></p>
+<p>Mediante el Software <a href="https://www.balena.io/etcher/"><em>Etcher</em></a> que es una herramienta <strong>Open Source</strong> para grabar imágenes en <em>tarjetas y pendrive</em>.</p>
+<p>Para ello lo descargamos de la página web (Compatible con Windows, Linux y MacOS) y lo ejecutamos:</p>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/etcher.png" alt=""></p>
+<p>Seleccionamos la imagen de <em>Raspbian</em> ya descargada anteriormente y la tarjeta la detecta automaticamente y le damos a <strong>Flash!</strong></p>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/etcher2.png" alt=""></p>
+<p>Una vez completado cerramos la ventana y procedemos a la instalación en la Raspberry Pi</p>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/etcher3.png" alt=""></p>
+<h2 id="creaci%C3%B3n-de-script-autostart">Creación de script autostart</h2>
+<p>Para que el script que vamos a crear a continuación se inicie según se encienda nuestra Raspberry Pi, tendremos que crear un fichero en el directorio <em>/etc/xdg/autostart</em> y lo llamaremos <a href="https://github.com/Wannaxry/script/blob/master/rdesktop%20autorun/Download/remoto.desktop"><em>remoto.desktop</em></a>.</p>
+<p>Una vez lo creemos añadimos las siguientes líneas:</p>
+<pre><code class="language-[Desktop"><div>Versión=1.0
+Type=Application
+Name=remoto
+Comment=Conexion remota
+Path=/home/pi/Documents
+TryExec=rdesktop
+Exec=sh /home/pi/Documents/remoto.sh
+</div></code></pre>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/remoto-desktop.png" alt=""></p>
+<h2 id="creaci%C3%B3n-de-script-con-inicio-sesi%C3%B3n">Creación de script con inicio sesión</h2>
+<p>Una vez instalado el <strong>Raspbian</strong> en la Raspberry Pi procedemos a crear los dos ficheros necesarios o descargarlos directamente del directorio <a href="https://github.com/Wannaxry/script/tree/master/rdesktop%20autorun/Download">Download</a>.</p>
+<p>Para empezar vamos al directorio en el cual pondremos el script principal <a href="https://github.com/Wannaxry/script/blob/master/rdesktop%20autorun/Download/remoto.sh"><em>remoto.sh</em></a>.</p>
+<p>En mi caso el script lo voy a crear en <em>Documentos</em> con un <code>nano remoto.sh</code> y dentro escribimos los siguiente:</p>
+<pre><code><div>#!/bin/bash
+rdesktop -u (user) (IP)
+</div></code></pre>
+<p>Pondremos el usuario donde pone <em>user</em> (quitando los paréntesis) y la <em>IP</em> del servidor al que queramos establecer la conexión remota:</p>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/remoto.png" alt=""></p>
+<h4 id="prueba-del-funcionamiento">Prueba del funcionamiento</h4>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/inicio-sesion.gif" alt=""></p>
+<h2 id="creaci%C3%B3n-de-script-con-inicio-autom%C3%A1tico">Creación de script con inicio automático</h2>
+<p>Para el inico automatico lo unico que tendremos que haces es añadir -p y la contraseña al script</p>
+<pre><code><div>#!/bin/bash
+rdesktop -u (user) -p (IP)
+</div></code></pre>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/remoto(-p).png" alt=""></p>
+<h4 id="prueba-del-funcionamiento-1">Prueba del funcionamiento</h4>
+<p><img src="file:////home/chema/Documentos/Github/script/rdesktop autorun/img/inicio-automatico.gif" alt=""></p>
+<h2 id="otros-par%C3%A1metros">Otros parámetros</h2>
+<p>Tambien tenemos otros parámetros que podemos añadir a la línea de comando como:</p>
+<ul>
+<li>-<strong>n</strong>: Nombre Host del cliente</li>
+<li>-<strong>k</strong>: Idioma del teclado</li>
+<li>-<strong>g</strong>: Porcentaje que ocupará la ventana en nuestro escritorio</li>
+<li>-<strong>d</strong>: Dominio</li>
+<li>-<strong>f</strong>: Pantalla completa</li>
+</ul>
+
+    </body>
+    </html>
