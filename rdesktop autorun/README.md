@@ -77,7 +77,7 @@ Pondremos el usuario donde pone *user* (quitando los paréntesis) y la *IP* del 
 
 ## Creación de script con inicio automático
 
-Para el inico automatico lo unico que tendremos que haces es añadir -p y la contraseña al script:
+Para el inicio automático lo único que tendremos que haces es añadir -p y la contraseña al script:
 
 ```
 #!/bin/bash
