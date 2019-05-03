@@ -1,5 +1,5 @@
 <h1 align="center" url="www.jmlion.com"> www.jmlion.com </h1>
-<center><h1> Automatización de conexión remota mediante Raspberry Pi </h1></center>
+<h1 align="center"> Automatización de conexión remota mediante Raspberry Pi </h1>
 
 <p align="center">  <img src="img/logo-raspberry.png" alt="drawing" width="230" > </p>
 
