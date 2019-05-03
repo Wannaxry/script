@@ -1,6 +1,7 @@
 # Automatización de conexión remota mediante Raspberry Pi
 
 <center><img src="img/logo-raspberry.png"  alt="drawing" width="230"/></center>
+<p align="center">  <img src="img/logo-raspberry.png"> </p>
 
 ## Índice:
 
