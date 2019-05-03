@@ -31,7 +31,7 @@ Seleccionamos la imagen de *Raspbian* ya descargada anteriormente y la tarjeta l
 
 ![](img/etcher2.png)
 
-Una vez completado cerramos la ventana y procedemos a la instalación en la Raspberry Pi
+Una vez completado cerramos la ventana y procedemos a la instalación en la Raspberry Pi:
 
 ![](img/etcher3.png)
 
@@ -41,7 +41,8 @@ Para que el script que vamos a crear a continuación se inicie según se enciend
 
 Una vez lo creemos añadimos las siguientes líneas:
 
-```[Desktop Entry]
+```
+[Desktop Entry]
 Versión=1.0
 Type=Application
 Name=remoto
@@ -76,7 +77,7 @@ Pondremos el usuario donde pone *user* (quitando los paréntesis) y la *IP* del 
 
 ## Creación de script con inicio automático
 
-Para el inico automatico lo unico que tendremos que haces es añadir -p y la contraseña al script
+Para el inico automatico lo unico que tendremos que haces es añadir -p y la contraseña al script:
 
 ```
 #!/bin/bash
